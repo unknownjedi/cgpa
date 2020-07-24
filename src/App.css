@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+  background-color: #282c34;
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -32,7 +36,247 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+a {
+  color: #282c34;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #282c34;
+}
+
+.home,
+.calculator {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.home {
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.calculator {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.sem-card {
+  flex: 0 0 200px;
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  justify-content: space-around;
+  border-radius: 10%;
+  transition: 0.1s all ease-in;
+  cursor: pointer;
+}
+
+@media(max-width:500px) {
+
+  .home {
+    flex-direction: column;
+  }
+}
+
+.home-card {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  border-radius: 10%;
+  transition: 0.1s all ease-in;
+  cursor: pointer;
+}
+
+.home-card:hover,
+.sem-card:hover {
+  transform: translateY(-10px);
+}
+
+.home-card:hover .card-color {
+  width: 80%
+}
+
+.home-card .content {
+  font-size: 150;
+}
+
+.card-color {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  border-radius: 10%;
+  width: 0%;
+  height: 100%;
+  border-end-end-radius: 40%;
+  border-top-right-radius: 40%;
+  transition: 0.2s all linear;
+}
+
+.card-color.cs {
+  background-color: #00fa9a;
+}
+
+.card-color.it {
+  background-color: #9932cc;
+}
+
+.sem-card .dot {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.sem-card .red {
+  background-color: red;
+}
+
+.sem-card .green {
+  background-color: green;
+}
+
+.sem-model {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.sem-model-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  background-color: #282c34;
+  opacity: 0.5;
+}
+
+
+.sem-model-card {
+  top: 10%;
+  bottom: 10%;
+  width: 70%;
+  min-height: 200px;
+  padding: 0;
+  opacity: 0;
+  animation-name: bounceIn;
+  animation-duration: 450ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.sem-model-card::before {
+  top: 0;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(0.89);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+.model-header {
+  position: relative;
+}
+
+.sem-form {
+  height: 100%;
+  width: 97%;
+  margin: 40px 10px 40px;
+}
+
+.model-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.save-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+.sem-name {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+
+.buttons {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+
+.buttons button {
+  margin-right: 20px;
+  height: 38px;
+}
+
+.upload-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.upload-btn button {
+  cursor: pointer;
+}
+
+.upload-btn-input {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  opacity: 0;
 }

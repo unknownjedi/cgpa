@@ -1,0 +1,25 @@
+[{
+        "grade": "RA",
+        "value": 0
+    },
+    {
+        "grade": "O",
+        "value": 10
+    },
+    {
+        "grade": "A+",
+        "value": 9
+    },
+    {
+        "grade": "A",
+        "value": 8
+    },
+    {
+        "grade": "B+",
+        "value": 7
+    },
+    {
+        "grade": "B",
+        "value": 6
+    }
+]

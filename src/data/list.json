@@ -1,0 +1,301 @@
+[{
+        "sem": 1,
+        "gpa": 0.00,
+        "cgpa": 0.00,
+        "subjects": [{
+                "subject": "Chemistry of Materials",
+                "credit": 4,
+                "grade": "RA"
+            }, {
+                "subject": "Communicative English",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Communication Skills Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            },
+            {
+                "subject": "Mathematics – I",
+                "credit": 4,
+                "grade": "RA"
+            },
+            {
+                "subject": "Applied Physics",
+                "credit": 4,
+                "grade": "RA"
+            },
+            {
+                "subject": "Fundamentals of Computing",
+                "credit": 4,
+                "grade": "RA"
+            },
+            {
+                "subject": "Computing Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            }
+        ]
+    },
+    {
+        "sem": 2,
+        "gpa": 0.00,
+        "cgpa": 0.00,
+        "subjects": [{
+                "subject": "Technical Communication",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Discrete Mathematics",
+                "credit": 4,
+                "grade": "RA"
+            },
+            {
+                "subject": "Mathematics – II",
+                "credit": 4,
+                "grade": "RA"
+            },
+            {
+                "subject": "Digital Systems",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Programming in C",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Digital Systems Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            },
+            {
+                "subject": "Programming in C Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            }
+        ]
+    },
+    {
+        "sem": 3,
+        "gpa": 0.00,
+        "cgpa": 0.00,
+        "subjects": [{
+                "subject": "Mathematics - III",
+                "credit": 4,
+                "grade": "RA"
+            },
+            {
+                "subject": "Data Structures",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Database Management Systems",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Microprocessors and Applications",
+                "credit": 4,
+                "grade": "RA"
+            },
+            {
+                "subject": "Object Oriented Programming in C++",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Data Structures Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            },
+            {
+                "subject": "Database Management Systems Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            },
+            {
+                "subject": "Object Oriented Programming Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            }
+        ]
+    },
+    {
+        "sem": 4,
+        "gpa": 0.00,
+        "cgpa": 0.00,
+        "subjects": [{
+                "subject": "Combinatorics and Graph Theory",
+                "credit": 4,
+                "grade": "RA"
+            },
+            {
+                "subject": "Computer Architecture",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Java and Internet Programming",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Operating Systems",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Theory of Computation",
+                "credit": 4,
+                "grade": "RA"
+            },
+            {
+                "subject": "Java and Internet Programming Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            },
+            {
+                "subject": "Operating Systems Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            }
+        ],
+        "difference": {
+            "cs": {
+                "subject": "Cryptography and Data Security",
+                "credit": 3,
+                "grade": "RA"
+            },
+            "it": {
+                "subject": "XML and Web Services Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            }
+        }
+    },
+    {
+        "sem": 5,
+        "gpa": 0.00,
+        "cgpa": 0.00,
+        "subjects": [{
+                "subject": "Applied Statistics",
+                "credit": 4,
+                "grade": "RA"
+            },
+            {
+                "subject": "Visual Programming",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Computer Networks",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Design and Analysis of Algorithms",
+                "credit": 4,
+                "grade": "RA"
+            },
+            {
+                "subject": "Software Engineering",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Data Mining and warehousing",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Data Mining and Warehousing Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            },
+            {
+                "subject": "GUI Applications Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            }
+        ]
+    },
+    {
+        "sem": 6,
+        "gpa": 0.00,
+        "cgpa": 0.00,
+        "subjects": [{
+                "subject": "Environmental Science and Engineering",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Probability, Queuing Theory and Reliability",
+                "credit": 4,
+                "grade": "RA"
+            },
+            {
+                "subject": "Computer Graphics and Multimedia",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Object Oriented Analysis and Design",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Case Tools Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            },
+            {
+                "subject": "Computer Graphics and Multimedia Laboratory",
+                "credit": 2,
+                "grade": "RA"
+            }
+        ],
+        "difference": {
+            "cs": {
+                "subject": "Network Programming",
+                "credit": 4,
+                "grade": "RA"
+            },
+            "it": {
+                "subject": "Network Management",
+                "credit": 3,
+                "grade": "RA"
+            }
+        },
+        "elective": {
+            "subject": "Information Coding Techniques",
+            "credit": 3,
+            "grade": "RA"
+        },
+        "dropdown": [{
+                "subject": "Information Coding Techniques",
+                "credit": 3,
+                "grade": "RA"
+            },
+            {
+                "subject": "Pattern Recognition",
+                "credit": 3,
+                "grade": "RA"
+            }
+        ]
+    },
+    {
+        "sem": 7,
+        "gpa": 0.00,
+        "cgpa": 0.00,
+        "subjects": [{
+            "subject": "Industrial Project",
+            "credit": 16,
+            "grade": "RA"
+        }]
+    }
+]
