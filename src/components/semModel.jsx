@@ -11,9 +11,44 @@ class SemModel extends Component {
       drop: false,
     };
   }
-  changeGrade = (sem, sub) => {
-    this.props.updateGrade(sem, sub, this.state.diff, this.state.drop);
+
+  updateSemList = (list, sub, grade) => {
+    for (let i in list) {
+      if (list[i]["subject"] === sub["subject"]) {
+        list[i]["grade"] = grade;
+        if (grade === "RA") {
+          list[i]["cleared"] = false;
+        } else {
+          list[i]["cleared"] = true;
+        }
+      }
+    }
+    return list;
   };
+  changeGrade = (sub, grade, reappear) => {
+    let list = { ...this.props.list };
+    console.log("selected grade", grade);
+    console.log("before model ds", list);
+
+    if (reappear) {
+      list["reappear"] = this.updateSemList(list["reappear"], sub, grade);
+    } else {
+      list["subjects"] = this.updateSemList(list["subjects"], sub, grade);
+      if (this.state.diff) {
+        list["difference"][this.props.branch] = this.updateSemList(
+          list["difference"][this.props.branch],
+          sub
+        );
+      }
+      if (this.state.drop) {
+        list["elective"] = this.updateSemList(list["elective"], sub, grade);
+      }
+    }
+    console.log("after model ds", list);
+    // let a = prompt("Check");
+    this.props.updateGrade(list);
+  };
+
   changeDropdown = (sem, sub, val) => {
     sub.subject = val;
     this.props.updateElective(sem, sub);
@@ -28,6 +63,7 @@ class SemModel extends Component {
       this.setState({ drop: true });
     }
   };
+
   render() {
     let { list, grades, sem: semNo, close, branch } = this.props;
     const sem = parseInt(semNo);
@@ -50,14 +86,14 @@ class SemModel extends Component {
                   <th>Subject</th>
                   <th>Credit</th>
                   <th>Grade</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
-                {list[sem - 1]["subjects"].map((s) => {
+                {list["subjects"].map((s) => {
                   return (
                     <SubjectRow
                       key={s.subject}
-                      sem={sem}
                       sub={s}
                       grades={grades}
                       changeGrade={this.changeGrade}
@@ -66,8 +102,7 @@ class SemModel extends Component {
                 })}
                 {this.state.diff && (
                   <SubjectRow
-                    sem={sem}
-                    sub={list[sem - 1]["difference"][branch]}
+                    sub={list["difference"][branch]}
                     grades={grades}
                     changeGrade={this.changeGrade}
                   />
@@ -75,12 +110,24 @@ class SemModel extends Component {
                 {this.state.drop && (
                   <Elective
                     sem={sem}
-                    sub={list[sem - 1]}
+                    sub={list}
                     grades={grades}
                     updateElective={this.changeDropdown}
                     changeGrade={this.changeGrade}
                   />
                 )}
+                {list["reappear"] &&
+                  list["reappear"].map((r) => {
+                    return (
+                      <SubjectRow
+                        key={r["subject"]}
+                        sub={r}
+                        grades={grades}
+                        changeGrade={this.changeGrade}
+                        reappear={true}
+                      />
+                    );
+                  })}
               </tbody>
             </table>
           </div>

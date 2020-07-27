@@ -1,14 +1,20 @@
 import React from "react";
 import GradeBox from "./gradeBar";
 
-const SubjectRow = ({ sem, sub: s, grades, changeGrade }) => {
+const SubjectRow = ({ sub: s, grades, changeGrade, reappear = false }) => {
   return (
     <tr>
       <td>{s.subject}</td>
       <td>{s.credit}</td>
       <td>
-        <GradeBox sem={sem} sub={s} grades={grades} onChange={changeGrade} />
+        <GradeBox
+          sub={s}
+          grades={grades}
+          onChange={changeGrade}
+          reappear={reappear}
+        />
       </td>
+      <td></td>
     </tr>
   );
 };

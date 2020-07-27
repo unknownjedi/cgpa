@@ -20,13 +20,9 @@ const Elective = ({ sem, sub, grades, updateElective, changeGrade }) => {
       </td>
       <td>{sub.dropdown[0].credit}</td>
       <td>
-        <GradeBox
-          sem={sem}
-          sub={sub.elective}
-          grades={grades}
-          onChange={changeGrade}
-        />
+        <GradeBox sub={sub.elective} grades={grades} onChange={changeGrade} />
       </td>
+      <td></td>
     </tr>
   );
 };

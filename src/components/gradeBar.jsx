@@ -1,26 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
 
-function onGradeChange(sub, val, props) {
-  sub.grade = val;
-  props.onChange(props.sem, sub);
+class GradeBox extends Component {
+  state = {};
+
+  onGradeChange = (grade) => {
+    let { sub, reappear, onChange } = this.props;
+    // this.sub.grade = val;
+    onChange(sub, grade, reappear);
+  };
+  render() {
+    let { sub, grades } = this.props;
+    return (
+      <select
+        value={sub.grade}
+        onChange={(event) => this.onGradeChange(event.target.value)}
+      >
+        {grades.map((grade) => {
+          return (
+            <option key={grade.value} value={grade.grade}>
+              {grade.grade}
+            </option>
+          );
+        })}
+      </select>
+    );
+  }
 }
-
-const GradeBox = (props) => {
-  let { sub, grades } = props;
-  return (
-    <select
-      value={sub.grade}
-      onChange={(event) => onGradeChange(sub, event.target.value, props)}
-    >
-      {grades.map((grade) => {
-        return (
-          <option key={grade.value} value={grade.grade}>
-            {grade.grade}
-          </option>
-        );
-      })}
-    </select>
-  );
-};
 
 export default GradeBox;
