@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Elective from "./elective";
 import SubjectRow from "./subjectRow";
 
+import { produce } from "immer";
+
 class SemModel extends Component {
   state = {};
   constructor(props) {
@@ -13,22 +15,22 @@ class SemModel extends Component {
   }
 
   updateSemList = (list, sub, grade) => {
+    let l = [];
     for (let i in list) {
+      l[i] = { ...list[i] };
       if (list[i]["subject"] === sub["subject"]) {
-        list[i]["grade"] = grade;
+        l[i]["grade"] = grade;
         if (grade === "RA") {
-          list[i]["cleared"] = false;
+          l[i]["cleared"] = false;
         } else {
-          list[i]["cleared"] = true;
+          l[i]["cleared"] = true;
         }
       }
     }
-    return list;
+    return l;
   };
   changeGrade = (sub, grade, reappear) => {
     let list = { ...this.props.list };
-    console.log("selected grade", grade);
-    console.log("before model ds", list);
 
     if (reappear) {
       list["reappear"] = this.updateSemList(list["reappear"], sub, grade);
@@ -44,9 +46,7 @@ class SemModel extends Component {
         list["elective"] = this.updateSemList(list["elective"], sub, grade);
       }
     }
-    console.log("after model ds", list);
-    // let a = prompt("Check");
-    this.props.updateGrade(list);
+    this.props.updateGrade(list, sub, grade, reappear);
   };
 
   changeDropdown = (sem, sub, val) => {

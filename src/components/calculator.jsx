@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import List from "../data/list.json";
+import SemModel from "./semModel";
+
+import { produce } from "immer";
+
+import List from "../data/v";
 import Difference from "../data/diffrence.json";
 import Grades from "../data/grades.json";
-import SemModel from "./semModel";
 
 class Calculator extends Component {
   state = {
@@ -15,369 +18,7 @@ class Calculator extends Component {
 
   constructor() {
     super();
-    const list = [
-      {
-        sem: 1,
-        gpa: "7.96",
-        cgpa: "7.96",
-        subjects: [
-          {
-            subject: "Chemistry of Materials",
-            credit: 4,
-            cleared: true,
-            grade: "A",
-          },
-          {
-            subject: "Communicative English",
-            credit: 3,
-            cleared: true,
-            grade: "A+",
-          },
-          {
-            subject: "Communication Skills Laboratory",
-            credit: 2,
-            cleared: true,
-            grade: "A",
-          },
-          {
-            subject: "Mathematics – I",
-            credit: 4,
-            cleared: true,
-            grade: "B+",
-          },
-          {
-            subject: "Applied Physics",
-            credit: 4,
-            cleared: true,
-            grade: "B+",
-          },
-          {
-            subject: "Fundamentals of Computing",
-            credit: 4,
-            cleared: true,
-            grade: "O",
-          },
-          {
-            subject: "Computing Laboratory",
-            credit: 2,
-            cleared: true,
-            grade: "B",
-          },
-        ],
-      },
-      {
-        sem: 2,
-        gpa: "8.14",
-        cgpa: "8.05",
-        subjects: [
-          {
-            subject: "Technical Communication",
-            credit: 3,
-            cleared: true,
-            grade: "A+",
-          },
-          {
-            subject: "Discrete Mathematics",
-            credit: 4,
-            cleared: true,
-            grade: "B+",
-          },
-          {
-            subject: "Mathematics – II",
-            credit: 4,
-            cleared: true,
-            grade: "A",
-          },
-          {
-            subject: "Digital Systems",
-            credit: 3,
-            cleared: true,
-            grade: "A",
-          },
-          {
-            subject: "Programming in C",
-            credit: 3,
-            cleared: true,
-            grade: "A",
-          },
-          {
-            subject: "Digital Systems Laboratory",
-            credit: 2,
-            cleared: true,
-            grade: "O",
-          },
-          {
-            subject: "Programming in C Laboratory",
-            credit: 2,
-            cleared: true,
-            grade: "A",
-          },
-        ],
-      },
-      {
-        sem: 3,
-        gpa: "5.26",
-        cgpa: "7.09",
-        subjects: [
-          {
-            subject: "Mathematics - III",
-            credit: 4,
-            cleared: false,
-            grade: "RA",
-          },
-          {
-            subject: "Data Structures",
-            credit: 3,
-            cleared: true,
-            grade: "B+",
-          },
-          {
-            subject: "Database Management Systems",
-            credit: 3,
-            cleared: true,
-            grade: "A",
-          },
-          {
-            subject: "Microprocessors and Applications",
-            credit: 4,
-            cleared: true,
-            grade: "A",
-          },
-          {
-            subject: "Object Oriented Programming in C++",
-            credit: 3,
-            cleared: false,
-            grade: "RA",
-          },
-          {
-            subject: "Data Structures Laboratory",
-            credit: 2,
-            cleared: true,
-            grade: "B+",
-          },
-          {
-            subject: "Database Management Systems Laboratory",
-            credit: 2,
-            cleared: true,
-            grade: "A+",
-          },
-          {
-            subject: "Object Oriented Programming Laboratory",
-            credit: 2,
-            cleared: true,
-            grade: "B",
-          },
-        ],
-      },
-      {
-        sem: 4,
-        gpa: "5.96",
-        cgpa: "6.79",
-        subjects: [
-          {
-            subject: "Combinatorics and Graph Theory",
-            credit: 4,
-            cleared: true,
-            grade: "B",
-          },
-          {
-            subject: "Computer Architecture",
-            credit: 3,
-            cleared: false,
-            grade: "RA",
-          },
-          {
-            subject: "Java and Internet Programming",
-            credit: 3,
-            cleared: true,
-            grade: "B+",
-          },
-          {
-            subject: "Operating Systems",
-            credit: 3,
-            cleared: true,
-            grade: "A",
-          },
-          {
-            subject: "Theory of Computation",
-            credit: 4,
-            cleared: true,
-            grade: "B+",
-          },
-          {
-            subject: "Java and Internet Programming Laboratory",
-            credit: 2,
-            cleared: true,
-            grade: "A",
-          },
-          {
-            subject: "Operating Systems Laboratory",
-            credit: 2,
-            cleared: true,
-            grade: "B",
-          },
-        ],
-        difference: {
-          cs: {
-            subject: "Cryptography and Data Security",
-            credit: 3,
-            cleared: true,
-            grade: "B",
-          },
-          it: {
-            subject: "XML and Web Services Laboratory",
-            credit: 2,
-            cleared: false,
-            grade: "RA",
-          },
-        },
-      },
-      {
-        sem: 5,
-        gpa: "7.00",
-        cgpa: "6.83",
-        subjects: [
-          {
-            subject: "Applied Statistics",
-            credit: 4,
-            cleared: true,
-            grade: "B",
-          },
-          {
-            subject: "Visual Programming",
-            credit: 3,
-            cleared: true,
-            grade: "A+",
-          },
-          {
-            subject: "Computer Networks",
-            credit: 3,
-            cleared: true,
-            grade: "B",
-          },
-          {
-            subject: "Design and Analysis of Algorithms",
-            credit: 4,
-            cleared: true,
-            grade: "B",
-          },
-          {
-            subject: "Software Engineering",
-            credit: 3,
-            cleared: true,
-            grade: "B+",
-          },
-          {
-            subject: "Data Mining and warehousing",
-            credit: 3,
-            cleared: true,
-            grade: "B",
-          },
-          {
-            subject: "Data Mining and Warehousing Laboratory",
-            credit: 2,
-            cleared: true,
-            grade: "A",
-          },
-          {
-            subject: "GUI Applications Laboratory",
-            credit: 2,
-            cleared: true,
-            grade: "O",
-          },
-        ],
-        reappear: [],
-      },
-      {
-        sem: 6,
-        gpa: "6.17",
-        cgpa: "6.72",
-        subjects: [
-          {
-            subject: "Environmental Science and Engineering",
-            credit: 3,
-            cleared: true,
-            grade: "A+",
-          },
-          {
-            subject: "Probability, Queuing Theory and Reliability",
-            credit: 4,
-            cleared: false,
-            grade: "RA",
-          },
-          {
-            subject: "Computer Graphics and Multimedia",
-            credit: 3,
-            cleared: true,
-            grade: "B",
-          },
-          {
-            subject: "Object Oriented Analysis and Design",
-            credit: 3,
-            cleared: true,
-            grade: "A",
-          },
-          {
-            subject: "Case Tools Laboratory",
-            credit: 2,
-            cleared: true,
-            grade: "A+",
-          },
-          {
-            subject: "Computer Graphics and Multimedia Laboratory",
-            credit: 2,
-            cleared: true,
-            grade: "B",
-          },
-        ],
-        difference: {
-          cs: {
-            subject: "Network Programming",
-            credit: 4,
-            cleared: true,
-            grade: "B+",
-          },
-          it: {
-            subject: "Network Management",
-            credit: 3,
-            cleared: false,
-            grade: "RA",
-          },
-        },
-        elective: {
-          subject: "Information Coding Techniques",
-          credit: 3,
-          cleared: true,
-          grade: "B+",
-        },
-        dropdown: [
-          {
-            subject: "Information Coding Techniques",
-            credit: 3,
-            cleared: false,
-            grade: "RA",
-          },
-          {
-            subject: "Pattern Recognition",
-            credit: 3,
-            cleared: false,
-            grade: "RA",
-          },
-        ],
-      },
-      {
-        sem: 7,
-        gpa: "8.00",
-        cgpa: "6.85",
-        subjects: [
-          {
-            subject: "Industrial Project",
-            credit: 16,
-            grade: "A",
-          },
-        ],
-      },
-    ];
+    const list = [...List];
     const difference = { ...Difference };
     const grades = [...Grades];
     const visited = [];
@@ -398,15 +39,24 @@ class Calculator extends Component {
     this.updateGPA();
   };
 
-  updateGrade = (semList) => {
-    let list = this.state.list;
-    console.log("before", this.state.list);
-
-    // let semester = semList["sem"];
-    // list[semester - 1] = semList;
-    // this.setState({ list });
-    // console.log("sem 3", list[2]);
-    // this.updateGPA();
+  updateGrade = async (semList, sub, grade, reappear) => {
+    let semester = semList["sem"];
+    let list = produce(this.state.list, (list) => {
+      list[semester - 1] = { ...semList };
+      if (reappear) {
+        for (let i in list[sub["sem"] - 1]["subjects"]) {
+          if (
+            list[sub["sem"] - 1]["subjects"][i]["subject"] === sub["subject"]
+          ) {
+            list[sub["sem"] - 1]["subjects"][i]["cleared"] = true;
+            list[sub["sem"] - 1]["subjects"][i]["clearedsem"] = semester;
+            list[sub["sem"] - 1]["subjects"][i]["clearedgrade"] = grade;
+          }
+        }
+      }
+    });
+    await this.setState({ list });
+    this.updateGPA();
   };
 
   updateElective = (sem, sub) => {
@@ -420,11 +70,12 @@ class Calculator extends Component {
   };
 
   updateGPA = () => {
-    let list = [...this.state.list];
-    for (let semester in list) {
-      list[semester]["gpa"] = this.getGPA(list[semester]["sem"]);
-      list[semester]["cgpa"] = this.getCGPA(list[semester]["sem"]);
-    }
+    let list = produce(this.state.list, (list) => {
+      for (let semester in list) {
+        list[semester]["gpa"] = this.getGPA(list[semester]["sem"]);
+        list[semester]["cgpa"] = this.getCGPA(list[semester]["sem"]);
+      }
+    });
     this.setState({ list });
     this.getReappearList();
   };
@@ -507,71 +158,62 @@ class Calculator extends Component {
 
   getReappearList = async () => {
     // console.log("before reappear list", this.state.list);
-    let list = [...this.state.list];
     let difference = { ...this.state.difference };
     let reappear = [];
-    for (let semester in list) {
-      for (let subject in list[semester]["subjects"]) {
-        let sub = list[semester]["subjects"][subject];
-        if (sub["grade"] === "RA" && !sub["cleared"]) {
-          sub["sem"] = parseInt(semester) + 1;
-          reappear = [...reappear, sub];
-        }
-      }
-      for (let subject in list[semester]["reappear"]) {
-        let sub = list[semester]["reappear"][subject];
-        if (sub["grade"] !== "RA") {
-          for (let i in list[sub["sem"] - 1]["subjects"]) {
-            if (list[sub["sem"] - 1]["subjects"][i] === sub["subject"]) {
-              list[sub["sem"] - 1]["subjects"][i]["cleared"] = true;
-              list[sub["sem"] - 1]["subjects"][i]["grade"] = "RA";
-              reappear = reappear.filter(
-                (r) => r["subject"] !== sub["subject"]
-              );
+    let list = produce(this.state.list, (list) => {
+      for (let semester in list) {
+        for (let subject in list[semester]["subjects"]) {
+          let sub = { ...list[semester]["subjects"][subject] };
+          if (sub["grade"] === "RA") {
+            sub["sem"] = parseInt(semester) + 1;
+            if (sub["cleared"]) {
+              sub["grade"] = sub["clearedgrade"];
             }
+            reappear = [...reappear, sub];
+          }
+        }
+        if (difference["difference"].includes(semester)) {
+          let sub = { ...list[semester]["difference"][this.props.branch] };
+          if (sub["grade"] === "RA") {
+            sub["sem"] = parseInt(semester) + 1;
+            reappear = [...reappear, sub];
+          }
+        }
+        if (difference["dropdown"].includes(semester)) {
+          let sub = { ...list[semester]["elective"] };
+          if (sub["grade"] === "RA") {
+            sub["sem"] = parseInt(semester) + 1;
+            reappear = [...reappear, sub];
           }
         }
       }
-      if (difference["difference"].includes(semester)) {
-        let sub = list[semester]["difference"][this.props.branch];
-        if (sub["grade"] === "RA") {
-          sub["sem"] = parseInt(semester) + 1;
-          reappear = [...reappear, sub];
-        }
-      }
-      if (difference["dropdown"].includes(semester)) {
-        let sub = list[semester]["elective"];
-        if (sub["grade"] === "RA") {
-          sub["sem"] = parseInt(semester) + 1;
-          reappear = [...reappear, sub];
-        }
-      }
-    }
+    });
     await this.setState({ reappear });
-    console.log("reappear", this.state.reappear);
     this.updateReappearList();
   };
 
   updateReappearList = () => {
-    let list = [...this.state.list];
-    for (let i in list) {
-      let l = list[i];
-      l["reappear"] = this.getReappearListForSem(parseInt(i) + 1);
-    }
+    let list = produce(this.state.list, (list) => {
+      for (let i in list) {
+        list[i]["reappear"] = this.getReappearListForSem(parseInt(i) + 1);
+      }
+    });
     this.setState({ list }, () => {
       // console.log("after reappear list", this.state.list);
     });
   };
 
   getReappearListForSem = (sem) => {
-    let { reappear } = this.state;
-    // console.log("reappear", reappear);
+    let reappear = produce(this.state.reappear, (re) => re);
     let oddList = [];
     let evenList = [];
     let odd = sem % 2;
     for (let i in reappear) {
       let s = reappear[i]["sem"];
-      if (s < sem) {
+      if (
+        (s < sem && !reappear[i]["cleared"]) ||
+        (reappear[i]["cleared"] && reappear[i]["clearedsem"] === sem)
+      ) {
         if (s % 2) {
           oddList = [...oddList, reappear[i]];
         } else {
@@ -585,8 +227,6 @@ class Calculator extends Component {
     } else {
       reappearList = evenList;
     }
-    // this.setState({ reappearList });
-    // console.log(sem, reappearList);
     return reappearList;
   };
 
