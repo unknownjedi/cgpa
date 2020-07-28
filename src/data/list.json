@@ -1,10 +1,8 @@
-[
-  {
+[{
     "sem": 1,
     "gpa": 0.0,
     "cgpa": 0.0,
-    "subjects": [
-      {
+    "subjects": [{
         "subject": "Chemistry of Materials",
         "credit": 4,
         "grade": "RA"
@@ -45,8 +43,7 @@
     "sem": 2,
     "gpa": 0.0,
     "cgpa": 0.0,
-    "subjects": [
-      {
+    "subjects": [{
         "subject": "Technical Communication",
         "credit": 3,
         "grade": "RA"
@@ -87,8 +84,7 @@
     "sem": 3,
     "gpa": 0.0,
     "cgpa": 0.0,
-    "subjects": [
-      {
+    "subjects": [{
         "subject": "Mathematics - III",
         "credit": 4,
         "grade": "RA"
@@ -134,8 +130,7 @@
     "sem": 4,
     "gpa": 0.0,
     "cgpa": 0.0,
-    "subjects": [
-      {
+    "subjects": [{
         "subject": "Combinatorics and Graph Theory",
         "credit": 4,
         "grade": "RA"
@@ -188,8 +183,7 @@
     "sem": 5,
     "gpa": 0.0,
     "cgpa": 0.0,
-    "subjects": [
-      {
+    "subjects": [{
         "subject": "Applied Statistics",
         "credit": 4,
         "grade": "RA"
@@ -235,8 +229,7 @@
     "sem": 6,
     "gpa": 0.0,
     "cgpa": 0.0,
-    "subjects": [
-      {
+    "subjects": [{
         "subject": "Environmental Science and Engineering",
         "credit": 3,
         "grade": "RA"
@@ -284,8 +277,7 @@
       "credit": 3,
       "grade": "RA"
     },
-    "dropdown": [
-      {
+    "dropdown": [{
         "subject": "Information Coding Techniques",
         "credit": 3,
         "grade": "RA"
@@ -301,26 +293,23 @@
     "sem": 7,
     "gpa": 0.0,
     "cgpa": 0.0,
-    "subjects": [
-      {
-        "subject": "Industrial Project",
-        "credit": 16,
-        "grade": "RA"
-      }
-    ]
+    "subjects": [{
+      "subject": "Industrial Project",
+      "credit": 16,
+      "grade": "RA"
+    }]
   },
   {
     "sem": 8,
     "gpa": 0.0,
     "cgpa": 0.0,
-    "subjects": [
-      {
+    "subjects": [{
         "subject": "Numerical Methods",
         "credit": 4,
         "grade": "RA"
       },
       {
-        "subject": "Principlesof Compiler Design",
+        "subject": "Principles of Compiler Design",
         "credit": 3,
         "grade": "RA"
       },
@@ -367,8 +356,7 @@
     "sem": 9,
     "gpa": 0.0,
     "cgpa": 0.0,
-    "subjects": [
-      {
+    "subjects": [{
         "subject": "Operations Research",
         "credit": 4,
         "grade": "RA"
@@ -414,12 +402,10 @@
     "sem": 10,
     "gpa": 0.0,
     "cgpa": 0.0,
-    "subjects": [
-      {
-        "subject": "Project Work",
-        "credit": 16,
-        "grade": "RA"
-      }
-    ]
+    "subjects": [{
+      "subject": "Project Work",
+      "credit": 16,
+      "grade": "RA"
+    }]
   }
 ]

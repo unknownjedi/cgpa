@@ -163,6 +163,7 @@ class SemModel extends Component {
                 )}
                 {list["reappear"] &&
                   list["reappear"].map((r) => {
+                    console.log(r);
                     return (
                       <SubjectRow
                         key={r["subject"]}

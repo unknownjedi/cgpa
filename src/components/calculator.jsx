@@ -43,6 +43,7 @@ class Calculator extends Component {
 
   updateGrade = async (semList, sub, grade, reappear) => {
     let semester = semList["sem"];
+    let difference = { ...this.state.difference };
     let list = produce(this.state.list, (list) => {
       list[semester - 1] = { ...semList };
       if (reappear) {
@@ -56,9 +57,33 @@ class Calculator extends Component {
             list[sub["sem"] - 1]["subjects"][i]["clearedgrade"] = grade;
           }
         }
+        if (difference["difference"].includes(parseInt(sub["sem"]))) {
+          if (
+            list[sub["sem"] - 1]["difference"][this.props.branch]["subject"] ===
+            sub["subject"]
+          ) {
+            list[sub["sem"] - 1]["difference"][this.props.branch]["cleared"] =
+              grade === "RA" ? false : true;
+            list[sub["sem"] - 1]["difference"][this.props.branch][
+              "clearedsem"
+            ] = semester;
+            list[sub["sem"] - 1]["difference"][this.props.branch][
+              "clearedgrade"
+            ] = grade;
+          }
+        }
+        if (difference["dropdown"].includes(parseInt(sub["sem"]))) {
+          if (list[sub["sem"] - 1]["elective"]["subject"] === sub["subject"]) {
+            list[sub["sem"] - 1]["elective"]["cleared"] =
+              grade === "RA" ? false : true;
+            list[sub["sem"] - 1]["elective"]["clearedsem"] = semester;
+            list[sub["sem"] - 1]["elective"]["clearedgrade"] = grade;
+          }
+        }
       }
     });
     await this.setState({ list });
+    console.log(this.state.list);
     this.updateGPA();
   };
 
@@ -177,17 +202,23 @@ class Calculator extends Component {
             reappear = [...reappear, sub];
           }
         }
-        if (difference["difference"].includes(semester)) {
+        if (difference["difference"].includes(parseInt(semester) + 1)) {
           let sub = { ...list[semester]["difference"][this.props.branch] };
           if (sub["grade"] === "RA") {
             sub["sem"] = parseInt(semester) + 1;
+            if (sub["cleared"]) {
+              sub["grade"] = sub["clearedgrade"];
+            }
             reappear = [...reappear, sub];
           }
         }
-        if (difference["dropdown"].includes(semester)) {
+        if (difference["dropdown"].includes(parseInt(semester) + 1)) {
           let sub = { ...list[semester]["elective"] };
           if (sub["grade"] === "RA") {
             sub["sem"] = parseInt(semester) + 1;
+            if (sub["cleared"]) {
+              sub["grade"] = sub["clearedgrade"];
+            }
             reappear = [...reappear, sub];
           }
         }
