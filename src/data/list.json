@@ -308,5 +308,98 @@
         "grade": "RA"
       }
     ]
+  },
+  {
+    "sem": 8,
+    "gpa": 0.0,
+    "cgpa": 0.0,
+    "subjects": [
+      {
+        "subject": "Numerical Methods",
+        "credit": 4,
+        "grade": "RA"
+      },
+      {
+        "subject": "Principlesof Compiler Design",
+        "credit": 3,
+        "grade": "RA"
+      },
+      {
+        "subject": "Software Testing and Quality Assurance",
+        "credit": 3,
+        "grade": "RA"
+      },
+      {
+        "subject": "Cloud Computing",
+        "credit": 3,
+        "grade": "RA"
+      },
+      {
+        "subject": "Total Quality Management",
+        "credit": 3,
+        "grade": "RA"
+      }
+    ],
+    "difference": {
+      "cs": {
+        "subject": "Machine Learning",
+        "credit": 3,
+        "grade": "RA"
+      },
+      "it": {
+        "subject": "Software Project Management",
+        "credit": 3,
+        "grade": "RA"
+      }
+    }
+  },
+  {
+    "sem": 9,
+    "gpa": 0.0,
+    "cgpa": 0.0,
+    "subjects": [
+      {
+        "subject": "Operations Research",
+        "credit": 4,
+        "grade": "RA"
+      },
+      {
+        "subject": "Information Management",
+        "credit": 3,
+        "grade": "RA"
+      },
+      {
+        "subject": "Mobile and Pervasive Computing",
+        "credit": 3,
+        "grade": "RA"
+      },
+      {
+        "subject": "Service Oriented Architecture",
+        "credit": 3,
+        "grade": "RA"
+      },
+      {
+        "subject": "Elective – IV",
+        "credit": 3,
+        "grade": "RA"
+      },
+      {
+        "subject": "Elective – V",
+        "credit": 3,
+        "grade": "RA"
+      }
+    ]
+  },
+  {
+    "sem": 10,
+    "gpa": 0.0,
+    "cgpa": 0.0,
+    "subjects": [
+      {
+        "subject": "Project Work",
+        "credit": 16,
+        "grade": "RA"
+      }
+    ]
   }
 ]

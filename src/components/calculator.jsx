@@ -50,7 +50,8 @@ class Calculator extends Component {
           if (
             list[sub["sem"] - 1]["subjects"][i]["subject"] === sub["subject"]
           ) {
-            list[sub["sem"] - 1]["subjects"][i]["cleared"] = true;
+            list[sub["sem"] - 1]["subjects"][i]["cleared"] =
+              grade === "RA" ? false : true;
             list[sub["sem"] - 1]["subjects"][i]["clearedsem"] = semester;
             list[sub["sem"] - 1]["subjects"][i]["clearedgrade"] = grade;
           }
