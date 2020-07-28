@@ -338,6 +338,16 @@
         "subject": "Total Quality Management",
         "credit": 3,
         "grade": "RA"
+      },
+      {
+        "subject": "Software Testing Laboratory",
+        "credit": 2,
+        "grade": "RA"
+      },
+      {
+        "subject": "Creativeand Innovative Project",
+        "credit": 2,
+        "grade": "RA"
       }
     ],
     "difference": {
@@ -386,6 +396,16 @@
       {
         "subject": "Elective – V",
         "credit": 3,
+        "grade": "RA"
+      },
+      {
+        "subject": "Mobile Applications Development (Mini Project)",
+        "credit": 2,
+        "grade": "RA"
+      },
+      {
+        "subject": "Service Oriented Architecture Laboratory",
+        "credit": 2,
         "grade": "RA"
       }
     ]
