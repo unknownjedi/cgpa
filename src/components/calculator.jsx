@@ -62,13 +62,15 @@ class Calculator extends Component {
     this.updateGPA();
   };
 
-  updateElective = (sem, sub) => {
-    let list = [...this.state.list];
-    let s = list[sem - 1]["elective"];
-    if (s) {
-      s.subject = sub.subject;
-    }
-    list[sem - 1]["elective"] = s;
+  updateElective = (sem, sub, val) => {
+    // let list = [...this.state.list];
+    let list = produce(this.state.list, (list) => {
+      let s = list[sem - 1]["elective"];
+      if (s) {
+        s.subject = val;
+      }
+      list[sem - 1]["elective"] = s;
+    });
     this.setState({ list });
   };
 

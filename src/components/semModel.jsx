@@ -27,29 +27,76 @@ class SemModel extends Component {
     }
     return l;
   };
+
+  updateSemListDiffDrop = (list, sub, grade) => {
+    let l = [];
+    l = { ...list };
+    if (list["subject"] === sub["subject"]) {
+      l["grade"] = grade;
+      if (grade === "RA") {
+        l["cleared"] = false;
+      } else {
+        l["cleared"] = true;
+      }
+    }
+    return l;
+  };
+
   changeGrade = (sub, grade, reappear) => {
+    // let { list: l } = this.props;
+    // let list = {
+    //   ...l,
+    //   subjects: [...l["subjects"]],
+    //   reappear: [...["reappear"]],
+    //   difference: {
+    //     cs: {
+    //       ...l["difference"]["cs"],
+    //     },
+    //     it: {
+    //       ...l["difference"]["it"],
+    //     },
+    //   },
+    // };
     let list = { ...this.props.list };
+    if (this.props.list.difference) {
+      list = {
+        ...this.props.list,
+        difference: {
+          ...this.props.list.difference,
+          cs: {
+            ...this.props.list.difference.cs,
+          },
+          it: {
+            ...this.props.list.difference.it,
+          },
+        },
+      };
+    }
 
     if (reappear) {
       list["reappear"] = this.updateSemList(list["reappear"], sub, grade);
     } else {
       list["subjects"] = this.updateSemList(list["subjects"], sub, grade);
       if (this.state.diff) {
-        list["difference"][this.props.branch] = this.updateSemList(
+        list["difference"][this.props.branch] = this.updateSemListDiffDrop(
           list["difference"][this.props.branch],
-          sub
+          sub,
+          grade
         );
       }
       if (this.state.drop) {
-        list["elective"] = this.updateSemList(list["elective"], sub, grade);
+        list["elective"] = this.updateSemListDiffDrop(
+          list["elective"],
+          sub,
+          grade
+        );
       }
     }
     this.props.updateGrade(list, sub, grade, reappear);
   };
 
   changeDropdown = (sem, sub, val) => {
-    sub.subject = val;
-    this.props.updateElective(sem, sub);
+    this.props.updateElective(sem, sub, val);
   };
 
   componentDidMount = () => {
