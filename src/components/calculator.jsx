@@ -3,7 +3,7 @@ import SemModel from "./semModel";
 
 import { produce } from "immer";
 
-import List from "../data/v";
+import List from "../data/list.json";
 import Difference from "../data/diffrence.json";
 import Grades from "../data/grades.json";
 
