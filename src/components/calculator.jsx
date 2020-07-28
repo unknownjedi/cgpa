@@ -26,7 +26,9 @@ class Calculator extends Component {
     this.state = { list, difference, grades, visited, reappear, sem: 0 };
     this.fileReader = new FileReader();
     this.fileReader.onload = (event) => {
-      this.setState({ list: JSON.parse(event.target.result) }, () => {
+      let len = JSON.parse(event.target.result).length;
+      let l = [...JSON.parse(event.target.result), ...List.slice(len)];
+      this.setState({ list: l }, () => {
         this.getReappearList();
         this.updateGPA();
         // console.log(this.state.list);
