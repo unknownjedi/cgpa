@@ -30,7 +30,7 @@ const SubjectRow = ({ sub: s, grades, changeGrade, reappear = false }) => {
         />
       </td>
       <td>
-        {reappear && <span class={getBadgeClass(s.sem)}>Sem {s.sem}</span>}
+        {reappear && <span className={getBadgeClass(s.sem)}>Sem {s.sem}</span>}
       </td>
     </tr>
   );
