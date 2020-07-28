@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Elective from "./elective";
 import SubjectRow from "./subjectRow";
 
-import { produce } from "immer";
-
 class SemModel extends Component {
   state = {};
   constructor(props) {
