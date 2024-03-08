@@ -1,3 +1,8 @@
+## CGPA calculator
+
+This app lets users calculate their CGPA and provide an downloadable JSON file to save their results. 
+Users can then upload their JSON file to modify / update their grades in the future.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
